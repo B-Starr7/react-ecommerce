@@ -20,8 +20,8 @@ export default class ProductList extends Component {
                         <div className="row">
                             <ProductConsumer>
                                 {/* always function to get the data */}
-                                {hello => {
-                                    return <p>{hello}</p>
+                                {value => {
+                                    console.log(value);
                                 }}
                             </ProductConsumer>
                         </div>
