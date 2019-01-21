@@ -8,7 +8,8 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-6">
-            column
+            <i className="fas fa-home" />
+            <p className=" text-title">weF</p>
           </div>   
 
           <div className="col-6">
