@@ -8,8 +8,6 @@ export default class ProductList extends Component {
     sate = { products: storeProducts };
 
     render() {
-        // console.log(this.state.products);
-
         return(
             <Fragment>
                 <div className="py-5">
@@ -21,13 +19,14 @@ export default class ProductList extends Component {
                             <ProductConsumer>
                                 {/* always function to get the data */}
                                 {value => {
-                                    console.log(value);
+                                    return value.products.map( product => {
+                                        return <Product key={product.id} product={product} />
+                                    } )
                                 }}
                             </ProductConsumer>
                         </div>
                     </div>
                 </div>
-                {/* <Product /> */}
             </Fragment>
         )
     }
