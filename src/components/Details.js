@@ -11,7 +11,7 @@ export default class Details extends Component {
             const {id, company, img, price, title, info, inCart} = value.detailProduct;
 
             return (
-              <div className="container py-5">
+              <div className="container">
                 <div className="row">
                   <div className="col-10 mx-auto text-center my-3">
                     <h1>{title}</h1>
