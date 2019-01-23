@@ -9,9 +9,15 @@ class ProductProvider extends Component {
     state = { 
         products: [],
         detailProduct,
-        cart: []
+        cart: [], 
+        modalOpen: true,
+        modalProduct: detailProduct,
     };
 
+    componentDidMount() {
+        this.setProducts();
+    }
+    
     setProducts = () => {
         let products = [];
         storeProducts.forEach(item => {
@@ -23,10 +29,6 @@ class ProductProvider extends Component {
         this.setState(() => {
             return {products}
         });
-    }
-
-    componentDidMount() {
-        this.setProducts();
     }
 
     // get an item based on id 
