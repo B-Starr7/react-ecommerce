@@ -39,9 +39,20 @@ export default class Details extends Component {
 
                     <div className="">
                       <Link to="/">
-                      <ButtonContainer>
-                        Back to Products</ButtonContainer>
-                      </Link>
+                        <ButtonContainer>
+                          Back to Products
+                        </ButtonContainer>
+                        </Link>
+                        
+                        <ButtonContainer 
+                          cart
+                          className="ml-1"
+                          disabled={inCart? true : false}
+                          onClick={() => {
+                            value.addToCart(id)
+                          }}>
+                          {inCart ? 'inCart' : 'Add to Cart'}
+                        </ButtonContainer>
                     </div>
                   </div>
                 </div>
