@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { storeProducts, detailProduct } from './data';
 
-//cretae nw context object 
+//create a new context object 
 const ProductContext = React.createContext();
 // Contetx API comes with 2 components Provider, Consumer
 
