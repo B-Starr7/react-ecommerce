@@ -27,7 +27,12 @@ export default class Product extends Component {
             }
           </button>
         </div>
-
+          {/* Card footer */}
+          <div className="card-footer d-flex justify-content-between">
+              <p className="align-self-center mb-0">{title}</p>
+              <h5 className="mb-0">
+              <span className="mr-1">£</span>{price}</h5>
+          </div>
         </div>
       </ProductWrapper>
     )
@@ -35,5 +40,52 @@ export default class Product extends Component {
 }
 
 const ProductWrapper = styled.div`
-
+  .card {
+    border-radius: 0;
+    border-color: transparent;
+    transition: all .25s linear;
+  }
+  .card-footer {
+    border-top: transparent;
+    background: transparent;
+    transition: all .25s linear;
+  }
+  &:hover {
+    .card {
+      border: 0.04rem solid rgba(247, 247, 247);
+      box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.2);
+    }
+    .card-footer {
+      background: rgba(247, 247, 247);
+    }
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .img-container:hover .card-img-top {
+    transform: scale(1.2);
+  }
+  .card-img-top {
+    transition: all .25s linear;
+  }
+  .cart-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    padding: 0.2rem 0.4rem;
+    background: var(--lightBlue);
+    color: var(--mainWhite);
+    font-size: 1.35rem;
+    transition: all .25s linear;
+    &:focus {
+      outline: none;
+    }
+    transform: translate(100%, 100%);
+  }
+  .img-container:hover .cart-btn {
+    transform: translate(0, 0); 
+  }
 `
