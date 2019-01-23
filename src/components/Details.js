@@ -59,7 +59,6 @@ export default class Details extends Component {
               </div>
             );
           }}
-        
         </ProductConsumer>
     )
   }
