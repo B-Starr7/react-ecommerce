@@ -2,7 +2,7 @@ import React from 'react'
 import CartItem from './CartItem';
 
 export default function CardList({value}) {
-  const {cart}  = value;
+  const {cart} = value;
   
   return (
     <div className="container-fluid">
