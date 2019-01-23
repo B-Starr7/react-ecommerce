@@ -3,13 +3,30 @@ import { storeProducts, detailProduct } from './data';
 
 //cretae nw context object 
 const ProductContext = React.createContext();
-// Contetx API comes with 2 compoennts Provider, Consumer
+// Contetx API comes with 2 components Provider, Consumer
 
 class ProductProvider extends Component {
     state = { 
-        products: storeProducts,
+        products: [],
         detailProduct
     };
+
+    setProducts = () => {
+        let products = [];
+        storeProducts.forEach(item => {
+            // asign the value from the object and copy them 
+            const singleItem = {...item};
+            products = [...products, singleItem];
+        });
+
+        this.setState(() => {
+            return {products}
+        });
+    }
+
+    componentDidMount() {
+        this.setProducts();
+    }
 
     handleDetail = () => {
         console.log('this is the detail');
