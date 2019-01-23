@@ -17,7 +17,7 @@ class ProductProvider extends Component {
     componentDidMount() {
         this.setProducts();
     }
-    
+
     setProducts = () => {
         let products = [];
         storeProducts.forEach(item => {
@@ -62,7 +62,24 @@ class ProductProvider extends Component {
             };
         },
         () => {console.log(this.state)})
+    }
 
+    openModal = id => {
+        // retrieve the product 
+        const product = this.getItem(id);
+        // change the state 
+        this.setState(() => {
+            return {
+                modalProduct: product,
+                modalOpen: true
+            }
+        });
+    }
+
+    closeModal = () => {
+        this.setState(() => {
+            return {modalOpen: false}
+        })
     }
 
     render() {
@@ -71,8 +88,11 @@ class ProductProvider extends Component {
                 // use destructuring here
                 ...this.state,
                 handleDetail: this.handleDetail,
-                addToCart: this.addToCart
-            }}>
+                addToCart: this.addToCart,
+                openModal: this.openModal,
+                closeModal: this.closeModal
+            }}
+        >
 
                 {this.props.children}
             </ProductContext.Provider>
