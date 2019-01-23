@@ -8,7 +8,8 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
     state = { 
         products: [],
-        detailProduct
+        detailProduct,
+        cart: []
     };
 
     setProducts = () => {
@@ -42,7 +43,24 @@ class ProductProvider extends Component {
     }
 
     addToCart = (id) => {
-        console.log(`This product has been added to the Cart with id: ${id}`);
+        let tempProducts = [...this.state.products];
+        const index = tempProducts.indexOf(this.getItem(id)); 
+        const product = tempProducts[index];
+        product.inCart = true;
+        product.count = 1;
+        // get the total
+        const price = product.price;
+        product.total = price;
+
+        // change the values in the state
+        this.setState(() => {
+            return {
+                products: tempProducts,
+                cart: [...this.state.cart, product]
+            };
+        },
+        () => {console.log(this.state)})
+
     }
 
     render() {

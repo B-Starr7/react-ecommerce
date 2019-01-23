@@ -51,7 +51,7 @@ export default class Details extends Component {
                           onClick={() => {
                             value.addToCart(id)
                           }}>
-                          {inCart ? 'inCart' : 'Add to Cart'}
+                          {inCart ? 'In Cart' : 'Add to Cart'}
                         </ButtonContainer>
                     </div>
                   </div>
