@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
     text-transform: capitalize;
-    border: none;
-    padding:  .25em .75em;
+    border: 1px solid var(--lightBlue);
+    padding:  .45em .85em;
     transition: all .25s linear;
     &:hover {
         background: var(--lightBlue);
