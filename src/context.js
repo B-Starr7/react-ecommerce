@@ -115,7 +115,7 @@ class ProductProvider extends Component {
                 increment: this.increment,
                 decrement: this.decrement,
                 removeItem: this.removeItem,
-                clearcart: this.clearCart
+                clearCart: this.clearCart
             }}
         >
 
