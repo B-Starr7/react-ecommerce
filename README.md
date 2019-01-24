@@ -5,8 +5,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Scripts Run the Application, run:
 
-### `yarn start`
-### `yarn test`
-### `yarn build build`
+### 
+```
+yarn start
+```
 
-Demo link [store demo] (http://store.domozetska.com/).
+### 
+```
+yarn test
+```
+
+### 
+```
+yarn build
+```
+
+Demo link: [store demo] (http://store.domozetska.com/).
