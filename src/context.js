@@ -99,11 +99,20 @@ class ProductProvider extends Component {
     }
 
     removeItem = (id) => {
-        console.log('rmeove an item');
+        console.log('remove an item');
     }
 
     clearCart = () => {
-        console.log('shopping cart was cleared');
+        this.setState(() => {
+            return {cart: [] } 
+        }, () => {
+
+            // add a callback so that setProducts will give a new original copy of objects
+            this.setProducts();
+
+            // update totals 
+            this.addTotals();
+        });
     }
     
     addTotals = () => {
