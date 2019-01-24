@@ -20,4 +20,4 @@ yarn test
 yarn build
 ```
 
-Demo link: [store demo] (http://store.domozetska.com/).
+Demo link: [store demo](http://store.domozetska.com/).
